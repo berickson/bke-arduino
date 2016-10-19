@@ -6,12 +6,12 @@
     {
         "name": "Brian Erickson",
     },
-    "version": "1.0",
+    "version": "1.",
     "repository":
      {
         "type": "git",
         "url": "https://github.com/berickson/bke-arduino"
     },
     "frameworks": "arduino",
-    "platforms": "atmelavr"
+    "platforms": "*"
 }
