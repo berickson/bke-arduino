@@ -1,0 +1,16 @@
+{
+    "name": "bke-arduino",
+    "keywords": "arduino, helper",
+    "description": "Helper library Brian uses in many Arduino Projects.  Use at your own risk.",
+    "authors":
+    {
+        "name": "Brian Erickson",
+    },
+    "version": "1.0",
+    "downloadUrl": "http://www.pjrc.com/teensy/arduino_libraries/OneWire.zip",
+    "export": {
+        "include": "OneWire"
+    },
+    "frameworks": "arduino",
+    "platforms": "atmelavr"
+}
