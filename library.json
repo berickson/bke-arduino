@@ -4,7 +4,7 @@
     "description": "Helper library Brian uses in many Arduino Projects.  Use at your own risk.",
     "authors":
     {
-        "name": "Brian Erickson",
+        "name": "Brian Erickson"
     },
     "version": "1.",
     "include": "/",
