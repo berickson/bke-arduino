@@ -7,6 +7,7 @@
         "name": "Brian Erickson",
     },
     "version": "1.",
+    "include": "*",
     "repository":
      {
         "type": "git",
