@@ -7,7 +7,7 @@
         "name": "Brian Erickson",
     },
     "version": "1.",
-    "include": "play.h",
+    "include": "*",
     "repository":
      {
         "type": "git",
