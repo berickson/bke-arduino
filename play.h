@@ -1,3 +1,3 @@
-inline int three() {
-  return 3;
-}
+#pragma once
+
+int three();
