@@ -7,10 +7,11 @@
         "name": "Brian Erickson",
     },
     "version": "1.0",
-    "downloadUrl": "http://www.pjrc.com/teensy/arduino_libraries/OneWire.zip",
-    "export": {
-        "include": "OneWire"
-    },
+    "repository":
+     {
+        "type": "git",
+        "url": "https://github.com/berickson/bke-arduino"
+    }    
     "frameworks": "arduino",
     "platforms": "atmelavr"
 }
