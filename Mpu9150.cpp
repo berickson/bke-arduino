@@ -92,15 +92,15 @@ void Mpu9150::setup() {
 
     // verify connection
     if(mpu.testConnection()) {
-        log(TRACE_MPU, "MPU9150 connection successful")
+        log(TRACE_MPU, "MPU9150 connection successful");
     } else {
-        log(LOG_ERROR, "MPU9150 connection successful")
+        log(LOG_ERROR, "MPU9150 connection successful");
     }
 
 
     // load and configure the DMP
     log(TRACE_MPU,F("Initializing DMP..."));
-    devStatus = mpu.dmpInitialize();
+    auto devStatus = mpu.dmpInitialize();
 
     // make sure it worked (returns 0 if so)
     if (devStatus == 0) {
