@@ -71,9 +71,9 @@ void Mpu9150::set_zero_orientation(Quaternion zero) {
 void Mpu9150::enable_interrupts(int interrupt_pin) {
     // enable Arduino interrupt detection
     log(TRACE_MPU,F("Enabling interrupt detection (Arduino external interrupt "));
-    Serial.println(INTERRUPT_NUMBER);
-    pinMode(INTERRUPT_PIN, INPUT);
-    attachInterrupt(INTERRUPT_NUMBER,dmpDataReady, RISING);
+    Serial.println(interrupt_pin);
+    pinMode(interrupt_pin, INPUT);
+    attachInterrupt(interrupt_pin,dmpDataReady, RISING);
     interrupt_pending = mpu.getIntStatus();
 }
 
