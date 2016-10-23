@@ -7,15 +7,15 @@
         "name": "Brian Erickson"
     },
     "version": "1.",
-    "include": "/",
+    "include": "*",
     "repository":
      {
         "type": "git",
         "url": "https://github.com/berickson/bke-arduino"
     },
-    },
     "dependencies": {
-        "I2Cdevlib-Core": "https://github.com/jrowberg"
+        "I2Cdevlib-MPU9150":">0.0.0",
+        "I2Cdevlib-Core": ">0.0.0"
     },
   
   "frameworks": "arduino",
