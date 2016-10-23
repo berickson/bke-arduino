@@ -184,9 +184,6 @@ void Mpu9150::execute(){
 
     mpu.dmpGetYawPitchRoll(yaw_pitch_roll, &q, &gravity);
 
-    // cancel out the yaw drift
-    yaw_pitch_roll[0] -=   yaw_slope_rads_per_ms * (millis() - yaw_adjust_start_ms);
-
     if(at_rest_calibrating) {
         auto ms = millis();
         if(ms >= at_rest_calibration_start_millis && ms < at_rest_calibration_end_millis) {
@@ -226,5 +223,7 @@ void Mpu9150::execute(){
             at_rest_calibration_start_millis = 0;
         }
     }
+    // cancel out the yaw drift
+    yaw_pitch_roll[0] -=   yaw_slope_rads_per_ms * (millis() - yaw_adjust_start_ms);
 }
 
