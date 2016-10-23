@@ -50,7 +50,7 @@ void Mpu9150::calibrate_nose_up() {
     set_zero_orientation(q.getProduct(zero_adjust));
 }
 
-void Mpu9150::start_calibrate_at_rest(float pause_seconds, floattest_seconds)
+void Mpu9150::start_calibrate_at_rest(float pause_seconds, float test_seconds)
 {
     Serial.println((String) "performing rest calibration.  Keep still for " + test_seconds + " seconds");
     at_rest_calibrating = true;
@@ -187,7 +187,7 @@ void Mpu9150::execute(){
     mpu.dmpGetYawPitchRoll(yaw_pitch_roll, &q, &gravity);
 
     // cancel out the yaw drift
-    yat_pitch_roll[0] -=   yaw_slope_rads_per_ms * (millis() - yaw_adjust_start_ms);
+    yaw_pitch_roll[0] -=   yaw_slope_rads_per_ms * (millis() - yaw_adjust_start_ms);
 
     if(at_rest_calibrating) {
         auto ms = millis();
