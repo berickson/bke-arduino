@@ -75,6 +75,7 @@ void Mpu9150::enable_interrupts(int interrupt_pin) {
     pinMode(interrupt_pin, INPUT);
     attachInterrupt(interrupt_pin,dmpDataReady, RISING);
     interrupt_pending = mpu.getIntStatus();
+    interrupt_enabled = true;
 }
 
 void Mpu9150::setup() {
