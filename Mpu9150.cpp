@@ -22,7 +22,7 @@ void Mpu9150::calibrate_as_horizontal() {
 Quaternion quaternion_from_axis_angle(const float &xx, const float &yy, const float &zz, const float &a)
 {
     // Here we calculate the sin( theta / 2) once for optimization
-    float factor = sin( a / 2.0 );
+    float factor = sinf( a / 2.0 );
 
     // Calculate the x, y and z of the quaternion
     float x = xx * factor;
@@ -68,7 +68,7 @@ void Mpu9150::set_zero_orientation(Quaternion zero) {
     zero_adjust = zero;
 }
 
-void enable_interrupts(int interrupt_pin) {
+void Mpu9150::enable_interrupts(int interrupt_pin) {
     // enable Arduino interrupt detection
     log(TRACE_MPU,F("Enabling interrupt detection (Arduino external interrupt "));
     Serial.println(INTERRUPT_NUMBER);
@@ -107,10 +107,7 @@ void Mpu9150::setup() {
         // turn on the DMP, now that it's ready
         log(TRACE_MPU,F("Enabling DMP..."));
         mpu.setDMPEnabled(true);
-
-        // set our DMP Ready flag so the main loop() function knows it's okay to use it
         Serial.println(F("DMP ready!"));
-        dmpReady = true;
 
         // get expected DMP packet size for later comparison
         packetSize = mpu.dmpGetFIFOPacketSize();
@@ -147,7 +144,7 @@ void Mpu9150::log_status() {
 
 void Mpu9150::execute(){
     // quickly return if there is nothing to do
-    if(interrupt_enabled && !interrupt_pending) return false;
+    if(interrupt_enabled && !interrupt_pending) return;
     interrupt_pending = false;
 
     log(TRACE_MPU,(String) "reading fifo");

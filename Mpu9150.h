@@ -36,7 +36,6 @@ public:
   bool interrupt_enabled = false;
   bool interrupt_pending = false;
 
-  uint8_t devStatus;      // return status after each device operation (0 = success, !0 = error)
   uint16_t packetSize;    // expected DMP packet size (default is 42 bytes)
   uint16_t fifoCount;     // count of all bytes currently in FIFO
   uint8_t fifoBuffer[64]; // FIFO storage buffer
