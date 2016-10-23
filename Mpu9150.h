@@ -34,7 +34,6 @@ public:
 
   // MPU control/status vars
   bool interrupt_enabled = false;
-  bool interrupt_pending = false;
 
   uint16_t packetSize;    // expected DMP packet size (default is 42 bytes)
   uint16_t fifoCount;     // count of all bytes currently in FIFO
