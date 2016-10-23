@@ -27,11 +27,13 @@ public:
 
   void calibrate_as_horizontal();
   void calibrate_nose_up();
-  void start_calibrate_at_rest(double pause_seconds, double test_seconds);
+  void start_calibrate_at_rest(float pause_seconds, float test_seconds);
+  void enable_interrupts(int interrupt_pin);
 
   void set_zero_orientation(Quaternion zeo);
 
   // MPU control/status vars
+  bool interrupt_enabled = false;
   bool dmpReady = false;  // set true if DMP init was successful
   bool initialReading = false; // set to true if we have initial reading
   uint8_t mpuIntStatus;   // holds actual interrupt status byte from MPU
@@ -45,8 +47,8 @@ public:
   bool at_rest_calibrating = false;
   uint32_t at_rest_calibration_start_millis = 0;
   uint32_t at_rest_calibration_end_millis = 0;
-  double yaw_slope_rads_per_ms;
-  double yaw_adjust_start_ms;
+  float yaw_slope_rads_per_ms;
+  float yaw_adjust_start_ms;
 
 
 
@@ -72,5 +74,4 @@ public:
   void log_status();
 
   void execute();
-  void zero();
 };
