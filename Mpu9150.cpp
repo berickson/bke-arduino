@@ -175,7 +175,7 @@ void Mpu9150::execute(){
     q = qraw.getProduct(zero_adjust.getConjugate());
     gravity= graw.getRotated(&zero_adjust);
 
-    const float g = 0.80665f;
+    const float g = 9.80665f;
 
     ax = g * (a.x/rest_a_mag - gravity.x);
     ay = g * (a.y/rest_a_mag - gravity.y);
