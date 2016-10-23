@@ -13,7 +13,6 @@
         "type": "git",
         "url": "https://github.com/berickson/bke-arduino"
     },
-    },
     "dependencies": {
         "I2Cdevlib-MPU9150":">0.0.0",
         "I2Cdevlib-Core": ">0.0.0"
