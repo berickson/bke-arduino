@@ -15,8 +15,8 @@
     },
     },
     "dependencies": {
-        "I2Cdevlib-MPU9150":"https://github.com/jrowberg",
-        "I2Cdevlib-Core": "https://github.com/jrowberg"
+        "I2Cdevlib-MPU9150":">0.0.0",
+        "I2Cdevlib-Core": ">0.0.0"
     },
   
   "frameworks": "arduino",
