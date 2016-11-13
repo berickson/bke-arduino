@@ -45,7 +45,6 @@ public:
   bool at_rest_calibrating = false;
   uint32_t at_rest_calibration_start_millis = 0;
   uint32_t at_rest_calibration_end_millis = 0;
-  float yaw_slope_rads_per_ms;
   float yaw_adjust_start_ms;
 
 
@@ -53,11 +52,15 @@ public:
   // orientation/motion vars
   Quaternion q,qraw;           // [w, x, y, z]         quaternion container
   Quaternion down_adjust = Quaternion(1,0,0,0);
-  Quaternion zero_adjust = Quaternion(1,0,0,0);
   VectorInt16 a, araw;
   VectorFloat gravity, graw;
   float ax,ay,az;
+
+  // calibration parameters
   float ax_bias,ay_bias,az_bias,rest_a_mag;
+  Quaternion zero_adjust = Quaternion(1,0,0,0);
+  float yaw_slope_rads_per_ms;
+  float yaw_actual_per_raw; // how many actual degrees of yaw change you get per reported degrees of yaw change
 
   VectorInt16 a0;
   VectorInt16 mag;
