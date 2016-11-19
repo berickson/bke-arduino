@@ -17,6 +17,6 @@ void log_line(String s) {
 
 
 
-String ftos(float f,int) {
+String ftos(float f,int n) {
   return String(f,n);
 }
