@@ -7,6 +7,7 @@ lib_deps =
   I2Cdevlib-Core
   I2Cdevlib-MPU9150
 */
+#include <MPU9150_9Axis_MotionApps41.h>
 
 #include <stdint.h>
 #include <math.h>
